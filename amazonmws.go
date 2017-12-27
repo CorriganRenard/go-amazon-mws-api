@@ -50,3 +50,11 @@ func (api AmazonMWSAPI) GetMatchingProductForId(idType string, idList []string) 
 
 	return api.genSignAndFetch("GetMatchingProductForId", "/Products/2011-10-01", params)
 }
+
+/*
+GetLowestOfferListingsForASIN takes a list of ASINs and returns the result.
+*/
+func (api AmazonMWSAPI) GetMyPriceForASIN(asins []string) (string, error) {
+
+	return "", nil
+}
