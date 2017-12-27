@@ -16,6 +16,7 @@ import (
 type AmazonMWSAPI struct {
 	AccessKey     string
 	SecretKey     string
+	MWSAuthToken  string
 	Host          string
 	MarketplaceId string
 	SellerId      string
@@ -61,6 +62,7 @@ func GenerateAmazonUrl(api AmazonMWSAPI, Action string, ActionPath string, Param
 	values := url.Values{}
 	values.Add("Action", Action)
 	values.Add("AWSAccessKeyId", api.AccessKey)
+	values.Add("MWSAuthToken", api.MWSAuthToken)
 	values.Add("SellerId", api.SellerId)
 	values.Add("SignatureVersion", "2")
 	values.Add("SignatureMethod", "HmacSHA256")
